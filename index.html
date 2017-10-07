@@ -6,23 +6,33 @@
     <title>LIMNIC MECHA</title>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.0.0/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/super-hands@2.0.1/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
 
   <body>
     <a-scene>
+      <!--Assets-->
       <a-assets>
-        <a-mixin id="algae" geometry="primative: sphere; radius: 2;" material="color: #E5E854"
-        ></a-mixin>
+        <a-mixin id="algae" material="color: #E5E854" dynamic-body grabbable></a-mixin>
       </a-assets>
+
       <!-- Player Controls-->
-      <a-entity progressive-controls="objects: a-sphere"></a-entity>
+      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body></a-entity>
 
       <!--Algae-->
-      <a-sphere mixin="algae" position="1 0 1"></a-sphere>
+      <a-sphere mixin="algae" position="0 2 -5"></a-sphere>
+      <a-sphere mixin="algae" position="7 4 3"></a-sphere>
+      <a-sphere mixin="algae" position="-4 6 0"></a-sphere>
+      <a-sphere mixin="algae" position="2 8 -3"></a-sphere>
 
 
-      <!--Sky-->
+      <!--Reference Start -->
+      <a-cylinder static-body position="0 -1 0" radius="10" material="color: #E1143C"></a-cylinder>
+
+      <!--Flaky Water-->
+      <a-entity particle-system="color:#E5E854;preset:dust"></a-entity>
       <a-sky color="#0073BD">
     </a-scene>
   </body>
