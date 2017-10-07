@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <a-scene physics="gravity: -4; restitution: 1;">
+    <a-scene physics="gravity: -4; restitution: 1; friction: 0;">
       
       <!--Assets-->
       <a-assets>
@@ -32,7 +32,7 @@
       </a-assets>
 
       <!-- Player Controls-->
-      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body dynamic-body></a-entity>
+      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body></a-entity>
 
       <!--Algae-->
       <a-sphere mixin="algae" position="0 2 -5"></a-sphere>
