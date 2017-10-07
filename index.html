@@ -4,22 +4,35 @@
   <head>
     <meta charset="utf-8">
     <title>LIMNIC MECHA</title>
+    
+    <!-- A-Frame Components -->
+    
+    <!--Main Engine-->
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    
+    <!-- Kinematic-body -->
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
+    
+    <!-- Physics System -->
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v2.0.0/dist/aframe-physics-system.min.js"></script>
+
+   <!--Grab Objects & Progressive Controls-->
     <script src="https://unpkg.com/super-hands@2.0.1/dist/super-hands.min.js"></script>
+    
+    <!-- Particle System -->
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
 
   <body>
     <a-scene physics="gravity: -4; restitution: 1;">
+      
       <!--Assets-->
       <a-assets>
         <a-mixin id="algae" material="color: #E5E854" dynamic-body grabbable></a-mixin>
       </a-assets>
 
       <!-- Player Controls-->
-      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body></a-entity>
+      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body dynamic-body></a-entity>
 
       <!--Algae-->
       <a-sphere mixin="algae" position="0 2 -5"></a-sphere>
