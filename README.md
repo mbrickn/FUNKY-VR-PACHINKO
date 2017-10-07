@@ -1,2 +1,2 @@
-# Limnic-Mecha
-A Mecha Game for KHE Fall 2017.
+# FUNKY VR PACHINKO
+A FUNKY game about PACHINKO in VIRTUAL REALITY for KHE Fall 2017.
