@@ -12,18 +12,16 @@
   <body>
     <a-scene>
       <a-assets>
-        <a-mixin id="algae"
-                 geometry="primative: sphere; height: 1; width: 1; depth: 1;"
-                 material="color: #E5E854"
+        <a-mixin id="algae" geometry="primative: sphere; radius: 2;" material="color: #E5E854"
         ></a-mixin>
       </a-assets>
       <!-- Player Controls-->
-      <a-entity progressive-controls="objects: a-box"></a-entity>
-      
+      <a-entity progressive-controls="objects: a-sphere"></a-entity>
+
       <!--Algae-->
-      <a-entity mixin="algae" position="1 0 1"></a-entity>
-      
-      
+      <a-sphere mixin="algae" position="1 0 1"></a-sphere>
+
+
       <!--Sky-->
       <a-sky color="#0073BD">
     </a-scene>
