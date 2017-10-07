@@ -24,29 +24,49 @@
   </head>
 
   <body>
-    <a-scene physics= "debug: true; gravity: -4; restitution: 0.1; friction: 0;">
+    <a-scene physics= "debug: false; gravity: -4; restitution: 0.1; friction: 0;">
 
       <!--Assets-->
       <a-assets>
-        <a-mixin id="pachi_b" material="color: #BEBEBE" dynamic-body="shape: box;" grabbable></a-mixin>
+        <a-mixin id="ball" material="color: #BEBEBE" dynamic-body="shape: box;" grabbable></a-mixin>
+        <a-mixin id="peg" static-body="shape: box;" rotation="-90 0 0" material="color: #BEBEBE" scale="1 2 1"></a-mixin>
       </a-assets>
 
       <!-- Player Controls-->
       <a-entity camera progressive-controls="objects: a-sphere" kinematic-body></a-entity>
 
       <!--Pachinko Ball-->
-      <a-sphere mixin="pachi_b" position="0 2 -3" scale="0.1 0.1 0.1"></a-sphere>
+      <a-sphere mixin="ball" position="0 2 -3" scale="0.1 0.1 0.1"></a-sphere>
 
       <!--Pachinko Machine-->
+
         <!--Main Walls-->
         <a-box static-body material="color: #4B4AA9" position="0 -2 -5" scale="4 8 0.2"></a-box>
         <a-box static-body material="color: #4B4AA9" position="2 -2 -4.6" scale="0.5 8.0 0.5"></a-box>
         <a-box static-body material="color: #4B4AA9" position="-2 -2 -4.6" scale="0.5 8.0 0.5"></a-box>
-        <!--Pegs-->
-        <a-cylinder static-body="shape: box;" position="-1 -2 -4.9" rotation="-90 0 0" scale="0.1 0.75 0.1" material="color: #BEBEBE"></a-cylinder>
+
+        <!--Window-->
+        <a-box static-body material="color: #4B4AA9" position="0 -2.5 -4.45" scale="4 7 0.2" opacity="0.3"></a-box>
+
+        <!--Downer Pegs-->
+        <a-cylinder mixin="peg" position="0 0 -4.7" height="0.1" radius="0.1" ></a-cylinder>
+        <a-cylinder mixin="peg" position="0.2 -0.2 -4.7" height="0.1" radius="0.1"></a-cylinder>
+        <a-cylinder mixin="peg" position="-0.2 -0.2 -4.7" height="0.1" radius="0.1"></a-cylinder>
+
+        <a-cylinder mixin="peg" position="0 -2 -4.7" height="0.1" radius="0.1" ></a-cylinder>
+        <a-cylinder mixin="peg" position="0.2 -2.2 -4.7" height="0.1" radius="0.1"></a-cylinder>
+        <a-cylinder mixin="peg" position="-0.2 -2.2 -4.7" height="0.1" radius="0.1"></a-cylinder>
+
+
+        <!--GRAND Prize Winner-->
+        <a-entity text="value:GRAND PRIZE;align:center" position="0 -3.4 -4.35" scale="4 4 1"></a-entity>
+        <a-cylinder mixin="peg" position="0 -4.2 -4.7" height="0.1" radius="0.1" ></a-cylinder>
+        <a-cylinder mixin="peg" position="0.2 -4 -4.7" height="0.1" radius="0.1"></a-cylinder>
+        <a-cylinder mixin="peg" position="-0.2 -4 -4.7" height="0.1" radius="0.1"></a-cylinder>
+
 
       <!--Floor -->
-      <a-cylinder static-body position="0 -1 0" radius="4" material="color: #4B4AA9" opacity="0.1"></a-cylinder>
+      <a-cylinder static-body position="0 -1 0" radius="4" material="color: #4B4AA9" opacity="0.05"></a-cylinder>
 
       <!--Flaky Water-->
       <a-entity particle-system="color:#E5E854;preset:dust"></a-entity>
