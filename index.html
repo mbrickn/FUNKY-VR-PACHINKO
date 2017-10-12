@@ -33,7 +33,7 @@
       </a-assets>
 
       <!-- Player Controls-->
-      <a-entity camera progressive-controls="objects: a-sphere" kinematic-body  position="0 1 -2.5"></a-entity>
+      <a-entity camera progressive-controls="objects: a-sphere"  position="0 1 -2.5"></a-entity>
 
       <!--Pachinko Ball-->
       <a-sphere mixin="ball" position="2.0 0 -4.2" scale="0.1 0.1 0.1" quaternion="0.333 0 0.943 0" dynamic-body></a-sphere>
@@ -94,8 +94,9 @@
         <a-cylinder mixin="peg" position="0.2 -4 -4.7" height="0.1" radius="0.1" material="color: #E1143C"></a-cylinder>
         <a-cylinder mixin="peg" position="-0.2 -4 -4.7" height="0.1" radius="0.1" material="color: #E1143C"></a-cylinder>
 
-      <!--Floor -->
+      <!--Floor
       <a-box static-body position="0 -1 -3" material="color: #4B4AA9" scale="2.5 2.5 0.5" opacity="0.05" rotation="-90 180 180"></a-box>
+      -->
 
       <!--Flaky Water-->
       <a-entity particle-system="color:#E5E854;preset:dust"></a-entity>
